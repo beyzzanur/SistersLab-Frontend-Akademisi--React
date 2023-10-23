@@ -1,0 +1,69 @@
+.container {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  padding-top: 500px;
+  padding-bottom: 500px;
+  background-color: #414449;
+
+}
+
+
+
+
+.marvel-card {
+  background-color: transparent;
+  width: 1000px;
+  height: 1000px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.marvel-card-inner {
+  position: relative;
+  width: 1000px;
+  height: 1000px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.marvel-card:hover .marvel-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.marvel-card-front, .marvel-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.marvel-card-front {
+  background-color:#992324;
+  color: black;
+}
+
+/* Style the back side */
+.marvel-card-back {
+  background-color: #992324;
+  color: white;
+  font-weight: bold;
+  font-size: 500%;
+  transform: rotateY(180deg);
+  
+
+}
+
+.pictures {
+
+  height: 1000px;
+  width: 1000px;
+}
+
